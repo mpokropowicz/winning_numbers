@@ -3,10 +3,18 @@ require_relative "winning_numbers.rb"
 
 class TestWinningNumbers < Minitest::Test
 
-	def test_1_in_Array_returns_true
+	def test_1_in_array_returns_true
 
-		results = inArray?(1, [1,2])
+		assert_equal(true, winning_number?(1, [1,2]))
+	end
 
-		assert_equal(true, results)
+	def test_3_in_array_returns_false
+
+		assert_equal(false, winning_number?(3, [1,2]))
+	end
+
+	def test_empty_array
+
+		assert_equal(false, winning_number?(1, []))
 	end
 end

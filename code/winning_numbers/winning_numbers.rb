@@ -1,7 +1,4 @@
-def inArray?(num, ary)
+def winning_number?(num, array)
 
-	if ary.include? num
-
-		true
-	end
+	array.include? num
 end
