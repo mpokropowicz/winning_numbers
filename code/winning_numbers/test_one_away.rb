@@ -17,4 +17,9 @@ class TestOneAwayExtra < Minitest::Test
 
 		assert_equal(true, one_away('0', '1'))
 	end
+
+	def test_10123_11323_returns_false
+
+		assert_equal(false, one_away('10123', '11323'))
+	end
 end

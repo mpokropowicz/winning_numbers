@@ -16,15 +16,13 @@ def one_away(num1, num2)
 
 	comparison.each do |n|
 
-		index = 0
-
-		if n[index + 1].to_i == n[index].to_i + 1 ||
-		   n[index + 1].to_i == n[index].to_i - 1
+		if n[1].to_i == n[0].to_i + 1 ||
+		   n[1].to_i == n[0].to_i - 1
 
 		   nums_one_away +=1
 		end
 
-		if n[index] == n[index + 1]
+		if n[0] == n[1]
 
 			nums_same += 1
 		end
