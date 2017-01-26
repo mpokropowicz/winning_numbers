@@ -17,4 +17,9 @@ class TestOneAwayExtra < Minitest::Test
 
 		assert_equal(['1235','1134'], nums_one_away('1234', ['9999', '5678', '1235', '1134', '1344']))
 	end
+
+	def test_num_len_greater_than_4
+
+		assert_equal(['11123','20123'], nums_one_away('10123', ['9999', '5678', '1235', '1134', '234', '11323', '11123','20123']))
+	end
 end
