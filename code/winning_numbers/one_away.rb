@@ -28,9 +28,6 @@ def one_away(num1, num2)
 
 			nums_same += 1
 		end
-
-
-		index += 1
 	end
 
 	if  nums_one_away == 1 && nums_same == num1.size - 1
@@ -42,5 +39,3 @@ def one_away(num1, num2)
 	end
 	end
 end
-
-print one_away('1234', '1235')
