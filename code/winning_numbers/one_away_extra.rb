@@ -14,7 +14,9 @@ def nums_one_away(num, array)
 		numArray.each do |i| #itterate over each digit in num
 
 			if n.size == num.size
+
 				if n[index].to_i == i.to_i + 1 || n[index].to_i == i.to_i - 1
+
 					count += 1
 				end
 			end
@@ -23,14 +25,18 @@ def nums_one_away(num, array)
 		end
 
 		if count == 1 #only one digit can be one away
+
 			oneOff << n
+
 			oneOff.each do |j|
 
 				temp = 0
 				differences = 0
+
 				j.each_char do |c|
 
 					if c != num[temp]
+						
 						differences +=1
 					end
 
@@ -38,6 +44,7 @@ def nums_one_away(num, array)
 				end
 
 				if differences != 1
+
 					oneOff.delete(n)
 				end
 			end
