@@ -12,4 +12,9 @@ class TestOneAwayExtra < Minitest::Test
 
 		assert_equal(['1235'], nums_one_away('1234', ['1235']))
 	end
+
+	def test_1234_returns_1235_and_1134
+
+		assert_equal(['1235','1134'], nums_one_away('1234', ['9999', '5678', '1235', '1134', '1344']))
+	end
 end
