@@ -12,4 +12,9 @@ class TestOneAwayExtra < Minitest::Test
 
 		assert_equal(false, one_away(1234, '12345'))
 	end
+
+	def test_0_1_returns_true
+
+		assert_equal(true, one_away('0', '1'))
+	end
 end
