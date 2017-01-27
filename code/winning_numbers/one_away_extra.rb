@@ -1,7 +1,12 @@
 def nums_one_away(num, array)
 
 	#we must pass in an Array and it must be populated
-	return false if array.class != Array || array.size == 0
+	unless num.class == String && array.class == Array &&
+		   array.size > 0 && array.all? {|e| e.class == String} &&
+		   array.all? {|e| e.to_i.to_s == e}
+
+		return false
+	else
 
 	numArray = num.to_s.split("")
 	oneOff = []
@@ -24,7 +29,7 @@ def nums_one_away(num, array)
 			index += 1
 		end
 
-		if count == 1 #only one digit can be one away
+		if count == 1 #now let's prune non-same base numbers
 
 			oneOff << n
 
@@ -50,9 +55,10 @@ def nums_one_away(num, array)
 			end
 		end
 	end
+	end
 
 	oneOff
 
 end
 
-nums_one_away('10123', ['9999', '5678', '1235', '1134', '234', '11323', '11123','20123'])
+print nums_one_away('10123', ['9999', '5678', '1235', '1134', '234', '11323', '11123','20123'])
