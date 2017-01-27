@@ -1,7 +1,7 @@
 def nums_one_away(num, array)
 
 	#we must pass in an Array and it must be populated
-	unless num.class == String && array.class == Array &&
+	unless num.class == String && num.to_i.to_s == num && array.class == Array &&
 		   array.size > 0 && array.all? {|e| e.class == String} &&
 		   array.all? {|e| e.to_i.to_s == e}
 
