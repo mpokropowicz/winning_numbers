@@ -20,7 +20,7 @@ def nums_one_away(num, array)
 
 			if n.size == num.size
 
-				if n[index].to_i == i.to_i
+				if n[index].to_i == i.to_i + 1 || n[index].to_i == i.to_i - 1
 
 					count += 1
 				end
@@ -29,9 +29,30 @@ def nums_one_away(num, array)
 			index += 1
 		end
 
-		if count == n.size - 1 #now let's prune non-same base numbers
+		if count == 1 #now let's prune non-same base numbers
 
 			oneOff << n
+
+			oneOff.each do |j|
+
+				temp = 0
+				differences = 0
+
+				j.each_char do |c|
+
+					if c != num[temp]
+						
+						differences +=1
+					end
+
+				temp+=1
+				end
+
+				if differences != 1
+
+					oneOff.delete(n)
+				end
+			end
 		end
 	end
 	end
