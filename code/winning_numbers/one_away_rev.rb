@@ -21,14 +21,13 @@ def one_away_winning_nums(nums1, nums2)
 
 				if n.size == num.size
 
-					if n[index].to_i == i.to_i + 1 || n[index].to_i == i.to_i - 1
-
-						off_by_one += 1
-					end
-
 					if n[index].to_i == i.to_i
 
 						same_nums += 1
+
+					elsif n[index].to_i == i.to_i + 1 || n[index].to_i == i.to_i - 1
+
+						off_by_one += 1
 					end
 				end
 
@@ -37,7 +36,7 @@ def one_away_winning_nums(nums1, nums2)
 
 			if same_nums == n.size - 1
 
-				oneOff << n 
+				oneOff << n
 			end
 		end
 	end
@@ -86,3 +85,5 @@ def nums_not_claimed(nums1, array)
 
 		array - oneOff
 end
+
+print  one_away_winning_nums(['10123', '9899'], ['9999', '5678', '1235', '1134', '234', '11323', '11123','20123'])
